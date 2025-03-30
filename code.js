@@ -1,6 +1,9 @@
 function permutations(arr) {
     // Base case: single-element array has one permutation (itself)
-    if (arr.length === 1) return [arr];
+    if (arr.length === 1) return [...arr];
+
+    // ... alternatively, an empty array has no permutations
+    if (arr.length === 0) return [];
 
     let perms = permutations(arr.slice(1)); // Returns an array of permutations for subarray after first element
     let first_elem = arr[0];
