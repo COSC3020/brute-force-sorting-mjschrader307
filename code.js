@@ -49,4 +49,6 @@ function permutationSort(a) {
             return perms_tried;
         }
     }
+
+    return perms_tried; // For empty array case
 }
