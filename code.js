@@ -43,9 +43,12 @@ function permutationSort(a) {
             }
         }
 
-        
-
         if (is_sorted) {
+            // Modify input array 'a' using newly found sorted version
+            for (let k = 0; k < p.length; k++) {
+                a[k] = p[k];
+            }
+
             return perms_tried;
         }
     }
