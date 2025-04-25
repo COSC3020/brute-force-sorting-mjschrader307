@@ -31,6 +31,25 @@ The worst case scenario would be the case in which every permutation had to be c
 
 Therefore, the best and worst case scenarios for this algorithm are asymptotically the same. It seems that the work for checking all permutations is largely inconsequential compared to that of finding all of them.
 
+### Memory-less Implementation
+
+If we were not able to track exhausted permutations while using brute force, in the code, there would be a while-loop looking something like:
+
+```
+...
+let perms = permutations(a);
+let is_sorted = false;
+
+while(!is_sorted) {
+  // Randomly grab a permutation from perms
+  let p = random_permutation
+
+  if (isSorted(p)) return [...p];
+}
+```
+
+The difference here is that, instead of traversing an array of all permutations and never trying the same one twice (memory is supported), the above code is grabbing a random permutation from the set of possible permutations and checking to see if it is sorted until it happens to grab one that is. This could never finish, because there is a chance that the sorted permutation is never chosen, so I guess the worst-case runtime complexity becomes $O(\infty)$.
+
 ---
 
 I certify that I have listed all sources used to complete this exercise, including the use
